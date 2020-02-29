@@ -8,15 +8,18 @@ def point_avg(points):
     """
     Accepts a list of points, each with the same number of dimensions.
     (points can have more dimensions than 2)
-    
+
     Returns a new point which is the center of all the points.
     """
-    raise NotImplementedError()
+     n = len(points)
+    x = sum([p[0] for p in points]) / n
+    y = sum([p[1] for p in points]) / n
+    return [x, y]
 
 
 def update_centers(dataset, assignments):
     """
-    Accepts a dataset and a list of assignments; the indexes 
+    Accepts a dataset and a list of assignments; the indexes
     of both lists correspond to each other.
     Compute the center for each of the assigned groups.
     Return `k` centers in a list
